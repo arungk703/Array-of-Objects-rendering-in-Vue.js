@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of Objects Rendering</title>
+    <style>
+        .passed{
+            background-color: green;
+        }
+        .failed{
+            background-color: red;
+        }
+        table{
+            border: 1px;
+            border-color: black;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js"></script>
+    <script src="main.js"></script>
+    <div id="array">
+        <table>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Marks</th>
+            <tr  v-for="(item, index) in arr" :class="isPassed(item.marks)">
+                  <td> {{item.id}} </td>
+                  <td> {{item.name}} </td>
+                  <td> {{item.marks}} </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
